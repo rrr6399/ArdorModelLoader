@@ -27,6 +27,10 @@ import com.jogamp.opengl.GL2;
 import gov.nasa.worldwind.render.DrawContext;
 import gov.nasa.worldwind.render.Renderable;
 
+/**
+ * http://forum.worldwindcentral.com/showthread.php?45896-Collada-models-with-lighting&p=124893#post124893 
+ * @author robotfire
+ */
 public class ArdorModel implements Renderable, Scene {
 
 	private Position position;
@@ -41,7 +45,7 @@ public class ArdorModel implements Renderable, Scene {
 	boolean useTexture;
 	boolean renderPicker;
 
-	private final AtomicReference<Node> nodeRef = new AtomicReference<Node>();
+	private final AtomicReference<Node> nodeRef = new AtomicReference<>();
 	private JoglCanvasRenderer renderer;
 
 	private boolean visible = true;

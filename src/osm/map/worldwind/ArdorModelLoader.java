@@ -22,9 +22,14 @@ import com.ardor3d.util.resource.ResourceLocatorTool;
 import com.ardor3d.util.resource.SimpleResourceLocator;
 import java.util.HashMap;
 
+/**
+ * http://forum.worldwindcentral.com/showthread.php?45896-Collada-models-with-lighting&p=124893#post124893 
+ * @author robotfire
+ */
+
 public class ArdorModelLoader {
 
-	private static HashMap<Object, String> modelCache = new HashMap<Object, String>();
+	private static final HashMap<Object, String> modelCache = new HashMap<>();
 
 	public static String createModel(String source) {
 		String model = modelCache.get(source);
