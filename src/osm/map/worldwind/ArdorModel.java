@@ -23,9 +23,10 @@ import com.ardor3d.renderer.state.RenderState.StateType;
 import com.ardor3d.renderer.state.record.TextureStateRecord;
 import com.ardor3d.renderer.state.record.TextureUnitRecord;
 import com.ardor3d.scenegraph.Node;
-import com.jogamp.opengl.GL2;
 import gov.nasa.worldwind.render.DrawContext;
 import gov.nasa.worldwind.render.Renderable;
+import javax.media.opengl.GL2;
+import static javax.media.opengl.GL2.GL_TEXTURE_BIT;
 
 /**
  * http://forum.worldwindcentral.com/showthread.php?45896-Collada-models-with-lighting&p=124893#post124893 
@@ -104,7 +105,7 @@ public class ArdorModel implements Renderable, Scene {
 		}
 		double localSize = this.computeSize(dc, loc);
 
-		if (dc.getView().getFrustumInModelCoordinates().contains(loc)) {
+		if (true || dc.getView().getFrustumInModelCoordinates().contains(loc)) {
 			dc.getView().pushReferenceCenter(dc, loc);
 			gl.glRotated(position.getLongitude().degrees, 0, 1, 0);
 			gl.glRotated(-position.getLatitude().degrees, 1, 0, 0);
@@ -217,7 +218,7 @@ public class ArdorModel implements Renderable, Scene {
 		GL2 gl = dc.getGL().getGL2();
 		Vec4 cameraPosition = dc.getView().getEyePoint();
 		gl.glPushAttrib(
-			GL2.GL_TEXTURE_BIT
+			GL_TEXTURE_BIT
 			| GL2.GL_COLOR_BUFFER_BIT
 			| GL2.GL_DEPTH_BUFFER_BIT
 			| GL2.GL_HINT_BIT

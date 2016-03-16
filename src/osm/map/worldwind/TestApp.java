@@ -29,7 +29,7 @@ public class TestApp extends ApplicationTemplate {
 				model950,
 				pos
 			);
-			model.setSize(5);
+			model.setSize(1);
 			model.setPitch(90);
 			layer.addRenderable(model);
 			insertBeforeCompass(getWwd(), layer);

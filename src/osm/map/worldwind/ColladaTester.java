@@ -18,8 +18,11 @@ import javafx.application.Application;
 import javafx.embed.swing.SwingNode;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-import jdk.internal.util.xml.XMLStreamException;
 import static javafx.application.Application.launch;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javax.xml.stream.XMLStreamException;
+//import javax.media.opengl.GLAutoDrawable;
 
 /**
  *
@@ -64,7 +67,13 @@ public class ColladaTester extends Application {
 		final Button scaleIt = new Button("Scale Aircraft");
 //		final Scene scene = new Scene( new BorderPane(rootPane, scaleIt, null, null, null));
 		scaleIt.setMaxWidth(Double.MAX_VALUE);
-		scaleIt.setOnAction(e -> scaleIt());
+//		scaleIt.setOnAction(e -> scaleIt());
+		scaleIt.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				scaleIt();
+			}
+		});
 //		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
